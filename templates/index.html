@@ -39,6 +39,10 @@
             cursor: pointer;
         }
     </style>
+    <script>
+        localStorage.clear();
+        localStorage.setItem("seriesData", JSON.stringify( {{ series_data|tojson }}));
+    </script>
     </head>
 	<body>
         <div class="container">
@@ -46,9 +50,6 @@
                 <h1 class="now-playing">Watching: </h1>
                 <br/>
                 <ul class="list-group series-select" style="height: 20vh; overflow: auto;">
-                    {% for series in series_names %}
-                        <li class="list-group-item" onclick="selectSeries('{{series}}',{{loop.index}})">{{series}}</li>
-                    {% endfor %}
                 </ul>
             </div>
             <br/>

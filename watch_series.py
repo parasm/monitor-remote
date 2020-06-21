@@ -5,6 +5,7 @@ import webbrowser
 import time
 import pyautogui
 from screeninfo import get_monitors
+import json
 
 app = Flask(__name__)
 
@@ -21,8 +22,7 @@ def load_series_data():
 @app.route('/')
 def main_page():
     all_series = load_series_data()
-    series_names = [series["name"] for series in all_series]
-    return render_template("index.html", series_names=series_names)
+    return render_template("index.html", series_data=all_series)
 
 @app.route('/get_episodes', methods=['POST'])
 def get_episodes():

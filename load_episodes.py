@@ -23,7 +23,7 @@ def load_episodes(URL):
     print(episodes)
     print("paras")
     series_name = series_name.replace(' ','_').replace(':','_')
-    file_name = f"C:\\Users\\paras\Desktop\\ameliorate\\tv\\series_data\\{series_name.lower()}_undersecon.txt"
+    file_name = f"C:\\Users\\paras\Desktop\\ameliorate\\tv\\series_data\\{series_name.lower()}.txt"
     print(file_name)
     with open(file_name, "wb") as save_file:
         save_file.write(pickle.dumps(series_data))
